@@ -16,7 +16,7 @@ In diesem Projekt geht es um die Einrichtung einer sicheren Kommunikationsverbin
 ## Aufgabenstellung
 Die einzelnen Aufgaben umfassen:
 - Einrichtung von **SSH**-Verbindungen und **Tunneling** für eine sichere Fernwartung.
-- Konfiguration von **VNC** (Virtual Network Computing) oder anderen Remote-Desktop-Technologien, um auf grafische Benutzeroberflächen zuzugreifen.
+- Konfiguration von Webtop, um auf grafische Benutzeroberflächen zuzugreifen.
 - Implementierung eines **Wireguard-VPNs** zur sicheren Verbindung zwischen Netzwerken.
 - Nutzung von **Apache Guacamole**, um Desktop-Umgebungen über den Browser zugänglich zu machen.
 - Vergleich und Test von **Remote Desktop Tools** wie TeamViewer und AnyDesk.
@@ -27,8 +27,7 @@ Die einzelnen Aufgaben umfassen:
 - **VMware Fusion**: Zum Aufsetzen der virtuellen Maschinen (VMs).
 - **Ubuntu Server**: Als Betriebssystem für die VMs.
 - **OpenSSH**: Für die SSH-Kommunikation.
-- **VNC**: Für grafischen Fernzugriff.
-- **Apache Guacamole**: Für die Bereitstellung des Desktops über das Web.
+- **Webtop**: Für grafischen Fernzugriff.
 - **AnyDesk/TeamViewer**: Für Fernwartung.
 - **Wireguard**: Für die Einrichtung eines VPNs in einem Docker-Container.
 - **No-IP**: Für dynamisches DNS.
@@ -44,11 +43,12 @@ Die einzelnen Aufgaben umfassen:
   3. Automatisierte Verbindung mithilfe von Systemd-Services.
 
 ### 2. Fernwartung mit Remote Desktop:
-- **Ziel**: Zugriff auf eine entfernte Desktop-Umgebung über VNC und Apache Guacamole.
+- **Ziel**: Zugriff auf eine entfernte Desktop-Umgebung mit Webtop
 - **Vorgehen**:
-  1. Aktivieren von X-Forwarding auf dem SSH-Server.
-  2. Konfiguration von VNC und Bereitstellung einer Desktopumgebung.
-  3. Implementierung von Apache Guacamole, um den Remote-Desktop-Zugriff über den Browser zu ermöglichen.
+  1. Docker Image pullen
+  2. leeren “config” folder im Downloads directory erstellen, damit dort files abgespeichert werden könnnen
+  3. Docker-compose.yaml erstellen
+  4. docker-compose up und im browser http://localhost:3000 aufrufen
 
 ### 3. VPN mit Wireguard:
 - **Ziel**: Einrichten eines schnellen und sicheren VPNs zwischen den VMs.
